@@ -55,7 +55,33 @@
 		margin:.4em 0 .4em 0;
 	}
 	</style>
-
+  <script>
+	function showMessage(obj,className){
+		let chatText = `${obj.username} : ${obj.msg}`;
+		if (obj.date){
+		  chatText += ` - <small><i>${obj.date}</i></small>`;
+		}
+		const newP = document.createElement("p");
+		newP.innerHTML = chatText;
+		newP.className = className;
+		//lblChat.insertBefore(newP, lblChat.childNodes[0]);
+		lblChat.appendChild(newP);
+		scrollChatToBottom();
+	}
+	
+	function showLog(obj){
+		let logText = `${obj.msg} - <small><i>${obj.date}</i></small>`;
+		const newP = document.createElement("p");
+		newP.innerHTML = logText;
+		//lblStatus.appendChild(newP);
+		lblStatus.insertBefore(newP, lblStatus.childNodes[0]);
+	}
+	
+	function scrollChatToBottom(){
+    		lblChat.scrollTop = lblChat.scrollHeight;
+  	}  
+	  
+  </script>
 </head>
 <body>
 <h1>Chat 'n Stuff</h1>
