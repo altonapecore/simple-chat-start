@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Chat 'n Stuff</title>
+	<style>
+	body{
+		font-family:sans-serif;
+	}
+	input,button{
+		font-size:1.2em;
+	}
+	
+	h2{
+		font-size:1.2em;
+		padding-bottom:0;
+		margin-bottom:0;
+	}
+	
+	#lblChat{
+		border:1px solid black;
+		height:300px;
+		padding-left:0.5em;
+		overflow:scroll;
+		display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+	}
+	
+	
+	#lblStatus{
+		border:1px solid black;
+	  font-size:85%;
+		color:gray;
+		height:80px;
+		padding-left:0.5em;
+		overflow:scroll;
+	}
+	
+	.sentMessage{
+		color: #fC;
+		background-color:#2389F5;
+		padding:.6em;
+		border-radius: 25px;
+		display: inline-block;
+		margin:.4em 0 .4em 1em;
+	}
+	
+	.receivedMessage{
+		color: black;
+		background-color:#E5E5EA;
+		padding:.6em;
+		border-radius: 25px;
+		display: inline-block;
+		margin:.4em 0 .4em 0;
+	}
+	</style>
+
+</head>
+<body>
+<h1>Chat 'n Stuff</h1>
+<section>
+	<p>Username: <input type=text id=txtUsername></p>
+	<p>Message: <input type=text id=txtMsg></p>
+	<p><button id=btnSend>Send</button>
+</section>
+
+<section>
+	<h2>Server Messages</h2>
+	<div id=lblStatus><p>Type in a username and a message, then click "Send".</p></div>
+</section>
+
+<section>
+	<h2>Chat Messages</h2>
+	<div id=lblChat></div>
+</section>
+
+</body>
+</html>
